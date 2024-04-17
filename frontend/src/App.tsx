@@ -4,20 +4,22 @@ import { Signin } from "./pages/Signin";
 import { Blog } from "./pages/Blog";
 import { Blogs } from "./pages/Blogs";
 import { Publish } from "./pages/Publish";
-import { Main } from "./components/Main";
+import MainPage from "./pages/MainPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-      <Main />
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<MainPage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/blog/:id" element={<Blog />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/publish" element={<Publish />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
